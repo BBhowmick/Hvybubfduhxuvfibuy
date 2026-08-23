@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewanney Gharoa Homestay | Sittong</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0f1f38;
+            --accent-gold: #c5a059;
+            --text-light: #f8f9fa;
+            --text-dark: #333333;
+            --bg-cream: #fcfbfa;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(rgba(15, 31, 56, 0.6), rgba(15, 31, 56, 0.6)), url('assets/images/hero-image.jpg') no-repeat center center/cover;
+            color: var(--text-light);
+            text-align: center;
+            padding: 140px 20px;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+        }
+
+        header p.address {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            opacity: 0.95;
+        }
+
+        header p.tagline {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--accent-gold);
+            margin-bottom: 35px;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-call { background-color: #2b6cb0; color: white; }
+        .btn-whatsapp { background-color: #25d366; color: white; }
+        .btn-facebook { background-color: #1877f2; color: white; }
+
+        /* Container Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        section {
+            margin-bottom: 70px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            margin: 10px auto 0;
+        }
+
+        /* About Section */
+        .about-box {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border-left: 6px solid var(--accent-gold);
+        }
+
+        .about-box p {
+            font-size: 1.2rem;
+            color: #4a5568;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Amenities Grid */
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .amenity-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+            border-top: 4px solid var(--accent-gold);
+            transition: var(--transition);
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .amenity-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+        }
+
+        /* --- CAROUSEL SECTION (Top 10 Images) --- */
+        .carousel-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            background: #000;
+            height: 450px;
+        }
+
+        .carousel-slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(15, 31, 56, 0.7);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .carousel-btn:hover { background: var(--primary-dark); }
+        .prev-btn { left: 15px; }
+        .next-btn { right: 15px; }
+
+        /* --- VIDEO SECTION --- */
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: #000;
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+            max-height: 450px;
+        }
+
+        /* --- FULL GALLERY GRID ("See All" Section) --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            background: #e2e8f0;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 1rem;
+        }
+
+        footer p {
+            opacity: 0.85;
+            margin-bottom: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.3rem; }
+            header { padding: 90px 15px; }
+            .carousel-container { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header>
+        <h1>SEWANNEY GHAROA HOMESTAY</h1>
+        <p class="address">Ghalaytor bazar, Sittong Khasmahal, West Bengal 734008</p>
+        <p class="tagline">Experience Himalayan Serenity</p>
+        
+        <div class="action-buttons">
+            <a href="tel:+917044239256" class="btn btn-call">📞 Call Now</a>
+            <a href="https://wa.me/917044239256" target="_blank" class="btn btn-whatsapp">💬 WhatsApp</a>
+            <a href="YOUR_FACEBOOK_PAGE_LINK" target="_blank" class="btn btn-facebook">👥 Facebook</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- 1. Description Section -->
+        <section>
+            <h2>Welcome to Your Mountain Home</h2>
+            <div class="about-box">
+                <p>
+                    Tucked away in the quiet, picturesque landscape of Ghalaytor Bazar, Sittong, our homestay is designed to be exactly what its name promises—a <em>gharoa</em> (home-like) escape where travel never ends. Wake up to golden sunrises over the majestic peaks of Mt. Kanchenjunga, sip hot tea while looking out at the lush terraced valleys, and experience true local mountain hospitality.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. Amenities Section -->
+        <section>
+            <h2>What We Offer</h2>
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <h3>🏔️ Majestic Distant Kanchenjunga Views</h3>
+                </div>
+                <div class="amenity-card">
+                    <h3>🌾 Peaceful Terraced Valley Landscapes</h3>
+                </div>
+                <div class="amenity-card">
+                    <h3>🛏️ Charming & Authentic Homestay Rooms</h3>
+                </div>
+                <div class="amenity-card">
+                    <h3>🍲 Delicious & Authentic Regional Cuisine</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Featured Carousel Section (Shows first 10 images) -->
+        <section>
+            <h2>Featured Highlights</h2>
+            <div class="carousel-container">
+                <!-- Slide 1 -->
+                <div class="carousel-slide active">
+                    <img src="assets/images/gallery-1.jpg" alt="Highlight 1" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=900&q=80'">
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-slide">
+                    <img src="assets/images/gallery-2.jpg" alt="Highlight 2" onerror="this.src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80'">
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-slide">
+                    <img src="assets/images/gallery-3.jpg" alt="Highlight 3" onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80'">
+                </div>
+                <!-- Slide 4 -->
+                <div class="carousel-slide">
+                    <img src="assets/images/gallery-4.jpg" alt="Highlight 4" onerror="this.src='https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=900&q=80'">
+                </div>
+                <!-- Slide 5 -->
+                <div class="carousel-slide">
+                    <img src="assets/images/gallery-5.jpg" alt="Highlight 5" onerror="this.src='https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=900&q=80'">
+                </div>
+
+                <!-- Carousel Controls -->
+                <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- 4. Video Tour Section -->
+        <section>
+            <h2>Property Video Tour</h2>
+            <div class="video-container">
+                <video controls muted>
+                    <source src="assets/videos/promo-1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <!-- 5. Full Gallery Section ("See All" - Ready for up to 50 images) -->
+        <section id="gallery">
+            <h2>Complete Gallery</h2>
+            <p style="text-align: center; color: #64748b; margin-bottom: 25px;">Explore a complete collection of our rooms, views, and surroundings.</p>
+            
+            <div class="gallery-grid">
+                <!-- Dynamically populated or manually mapped grid for gallery items -->
+                <div class="gallery-item"><img src="assets/images/gallery-1.jpg" alt="Gallery 1" onerror="this.style.display='none'"></div>
+                <div class="gallery-item"><img src="assets/images/gallery-2.jpg" alt="Gallery 2" onerror="this.style.display='none'"></div>
+                <div class="gallery-item"><img src="assets/images/gallery-3.jpg" alt="Gallery 3" onerror="this.style.display='none'"></div>
+                <div class="gallery-item"><img src="assets/images/gallery-4.jpg" alt="Gallery 4" onerror="this.style.display='none'"></div>
+                <div class="gallery-item"><img src="assets/images/gallery-5.jpg" alt="Gallery 5" onerror="this.style.display='none'"></div>
+                <div class="gallery-item"><img src="assets/images/gallery-6.jpg" alt="Gallery 6" onerror="this.style.display='none'"></div>
+                <div class="gallery-item"><img src="assets/images/gallery-7.jpg" alt="Gallery 7" onerror="this.style.display='none'"></div>
+                <div class="gallery-item"><img src="assets/images/gallery-8.jpg" alt="Gallery 8" onerror="this.style.display='none'"></div>
+                <div class="gallery-item"><img src="assets/images/gallery-9.jpg" alt="Gallery 9" onerror="this.style.display='none'"></div>
+                <div class="gallery-item"><img src="assets/images/gallery-10.jpg" alt="Gallery 10" onerror="this.style.display='none'"></div>
+                <!-- You can easily copy and paste items up to gallery-50.jpg -->
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Sewanney Gharoa Homestay. All rights reserved.</p>
+        <p>Email: sewanney.gharoa.homestay@gmail.com | Phone: +91 7044239256</p>
+    </footer>
+
+    <!-- Carousel JavaScript Control -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+
+        function moveSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Auto slide every 5 seconds
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+    </script>
+</body>
+</html>
