@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sewanney Gharoa Homestay | Sittong</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         :root {
             --primary-dark: #0f1f38;
             --accent-gold: #c5a059;
             --text-light: #f8f9fa;
-            --text-dark: #333333;
-            --bg-cream: #fcfbfa;
+            --bg-white: #ffffff;
             --transition: all 0.3s ease;
         }
 
@@ -23,80 +29,88 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-cream);
-            color: var(--text-dark);
+            background-color: var(--bg-white);
+            color: #333;
             line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        /* Hero Section */
         header {
-            background: linear-gradient(rgba(15, 31, 56, 0.6), rgba(15, 31, 56, 0.6)), url('assets/images/hero-image.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(15, 31, 56, 0.6), rgba(15, 31, 56, 0.6)), url('assets/images/hero-image.jpg') no-repeat center/cover;
             color: var(--text-light);
             text-align: center;
-            padding: 140px 20px;
+            padding: 150px 20px;
             min-height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            border: 8px solid var(--accent-gold);
+            border-radius: 12px;
+            margin: 20px;
         }
 
         header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.2rem;
-            margin-bottom: 15px;
+            font-size: 3.5rem;
             letter-spacing: 1.5px;
-            color: #ffffff;
+            margin-bottom: 15px;
         }
 
-        header p.address {
-            font-size: 1.15rem;
+        header p {
+            font-size: 1.2rem;
             margin-bottom: 10px;
-            opacity: 0.95;
         }
 
-        header p.tagline {
-            font-size: 1.4rem;
-            font-style: italic;
-            color: var(--accent-gold);
-            margin-bottom: 35px;
-        }
-
-        /* Action Buttons */
         .action-buttons {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
             justify-content: center;
+            margin-top: 20px;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 14px 28px;
+            padding: 12px 24px;
             border-radius: 30px;
             font-weight: 600;
             text-decoration: none;
             transition: var(--transition);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .btn-call { background-color: #2b6cb0; color: white; }
-        .btn-whatsapp { background-color: #25d366; color: white; }
-        .btn-facebook { background-color: #1877f2; color: white; }
+        .btn-call {
+            background: #2b6cb0;
+            color: #fff;
+        }
 
-        /* Container Layout */
+        .btn-whatsapp {
+            background: #25d366;
+            color: #fff;
+        }
+
+        .btn-facebook {
+            background: #1877f2;
+            color: #fff;
+        }
+
+        .btn-map {
+            background: #ea4335;
+            color: #fff;
+        }
+
         .container {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
+            margin: auto;
+            padding: 60px 20px;
         }
 
         section {
@@ -121,44 +135,43 @@
             margin: 10px auto 0;
         }
 
-        /* About Section */
         .about-box {
-            background: white;
-            padding: 50px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
             border-left: 6px solid var(--accent-gold);
+            border-right: 6px solid var(--accent-gold);
+            max-width: 1400px;
+            margin: auto;
         }
 
         .about-box p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #4a5568;
             text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
             line-height: 1.8;
         }
 
-        /* Amenities Grid */
         .amenities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
 
         .amenity-card {
-            background: white;
-            padding: 35px 25px;
+            background: #fff;
+            padding: 70px;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
             border-top: 4px solid var(--accent-gold);
             transition: var(--transition);
         }
 
         .amenity-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         }
 
         .amenity-card h3 {
@@ -166,16 +179,102 @@
             color: var(--primary-dark);
         }
 
-        /* --- CAROUSEL SECTION (Top 10 Images) --- */
+        .amenities-more {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .show-more,
+        #amenitiesToggleLess {
+            cursor: pointer;
+            color: var(--accent-gold);
+            font-weight: 600;
+            float: right;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            user-select: none;
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .place-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 24px 22px;
+            border: 1px solid #e8ecf2;
+            border-bottom: 4px solid var(--accent-gold);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            transition: var(--transition);
+        }
+
+        .place-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(15, 31, 56, 0.09);
+            border-color: #d1d9e2;
+            border-bottom-color: var(--accent-gold);
+        }
+
+        .place-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+
+        .place-icon-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: #f4f6fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .place-tag {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            background: #fdf8ee;
+            color: #b48328;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        .place-card h3 {
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+
+        .place-card p {
+            color: #556274;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
         .carousel-container {
             position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-            border-radius: 16px;
+            max-width: 1200px;
+            margin: auto;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            background: #000;
-            height: 450px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            height: 580px;
         }
 
         .carousel-slide {
@@ -199,113 +298,316 @@
             top: 50%;
             transform: translateY(-50%);
             background: rgba(15, 31, 56, 0.7);
-            color: white;
+            color: #fff;
             border: none;
-            padding: 15px;
-            cursor: pointer;
-            font-size: 1.2rem;
+            padding: 12px;
             border-radius: 50%;
-            transition: var(--transition);
+            cursor: pointer;
+            font-size: 1.5rem;
             z-index: 10;
+            transition: var(--transition);
         }
 
-        .carousel-btn:hover { background: var(--primary-dark); }
-        .prev-btn { left: 15px; }
-        .next-btn { right: 15px; }
+        .carousel-btn:hover {
+            background: var(--primary-dark);
+        }
 
-        /* --- VIDEO SECTION --- */
-        .video-container {
-            max-width: 800px;
-            margin: 0 auto;
-            border-radius: 16px;
+        .prev-btn {
+            left: 15px;
+        }
+
+        .next-btn {
+            right: 15px;
+        }
+
+        .view-gallery {
+            display: block;
+            float: right;
+            margin-left: 10px;
+            margin-top: 15px;
+            color: var(--accent-gold);
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 0 20px 25px 20px;
+            border-radius: 8px;
+            max-width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 100;
+        }
+
+        .modal-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin: 0;
+        }
+
+        .modal-close {
+            background: #c00;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 1.4rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: #900;
+        }
+
+        .lightbox-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px 16px 16px 16px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: #0f1f38;
+        }
+
+        .lightbox-header {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            border-bottom: none;
+            margin-bottom: 8px;
+            padding: 0;
+            background: transparent;
+        }
+
+        #lightboxVideo,
+        #lightboxImg {
+            max-width: 85vw;
+            max-height: 80vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            border-radius: 6px;
+        }
+
+        .lightbox-media-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(15, 31, 56, 0.75);
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: var(--transition);
+            user-select: none;
+        }
+
+        .lightbox-nav-btn:hover {
+            background: var(--primary-dark);
+            border-color: var(--accent-gold);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-lightbox {
+            left: 12px;
+        }
+
+        .next-lightbox {
+            right: 12px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        .video-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .video-thumb {
+            position: relative;
+            cursor: pointer;
+            border-radius: 6px;
+            overflow: hidden;
             background: #000;
         }
 
-        .video-container video {
+        .video-thumb video,
+        .video-thumb img {
             width: 100%;
-            display: block;
-            max-height: 450px;
-        }
-
-        /* --- FULL GALLERY GRID ("See All" Section) --- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .gallery-item {
-            height: 200px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: var(--transition);
-            background: #e2e8f0;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.03);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
+            height: 180px;
             object-fit: cover;
+            border-radius: 6px;
+            display: block;
         }
 
-        /* Footer */
+        .video-thumb .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            color: #fff;
+            opacity: 0.85;
+            transition: var(--transition);
+            pointer-events: none;
+        }
+
+        .video-thumb:hover .play-icon {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
         footer {
-            background-color: var(--primary-dark);
+            background: var(--primary-dark);
             color: var(--text-light);
             text-align: center;
-            padding: 40px 20px;
-            font-size: 1rem;
+            padding: 30px 20px;
         }
 
-        footer p {
-            opacity: 0.85;
-            margin-bottom: 8px;
+        footer a {
+            color: var(--text-light);
+            text-decoration: underline;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.3rem; }
-            header { padding: 90px 15px; }
-            .carousel-container { height: 300px; }
+        @media (max-width: 992px) {
+            .places-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width:768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header {
+                padding: 90px 15px;
+            }
+
+            .carousel-container {
+                height: 300px;
+            }
+
+            .amenities-grid,
+            .places-grid,
+            .gallery-grid,
+            .video-gallery-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-<body>
 
-    <!-- Hero Section -->
+<body>
     <header>
-        <h1>SEWANNEY GHAROA HOMESTAY</h1>
-        <p class="address">Ghalaytor bazar, Sittong Khasmahal, West Bengal 734008</p>
+        <h1>Sewanney Gharoa Homestay</h1>
+        <p class="address"><i class="fas fa-map-marker-alt"></i> <a
+                href="https://www.google.com/maps/place/Sewanney+Gharoa+Homestay/@26.9194369,88.3744173,17z/data=!3m1!4b1!4m6!3m5!1s0x39e43b07610cd359:0x3d02105e35357aa4!8m2!3d26.9194369!4d88.3769922!16s%2Fg%2F11zg27dqnk?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank" style="color: inherit; text-decoration: none;">Ghalaytor Bazar, Sittong Khasmahal, West
+                Bengal 734008</a></p>
         <p class="tagline">Experience Himalayan Serenity</p>
-        
         <div class="action-buttons">
-            <a href="tel:+917044239256" class="btn btn-call">📞 Call Now</a>
-            <a href="https://wa.me/917044239256" target="_blank" class="btn btn-whatsapp">💬 WhatsApp</a>
-            <a href="YOUR_FACEBOOK_PAGE_LINK" target="_blank" class="btn btn-facebook">👥 Facebook</a>
+            <a href="tel:+917044239256" class="btn btn-call" aria-label="Call Now"><i class="fas fa-phone-alt"></i></a>
+            <a href="https://wa.me/917044239256" target="_blank" class="btn btn-whatsapp" aria-label="WhatsApp"><i
+                    class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/people/Sewanney-Gharoa-Homestay/61591392534701/" target="_blank"
+                class="btn btn-facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.google.com/maps/place/Sewanney+Gharoa+Homestay/@26.9194369,88.3744173,17z/data=!3m1!4b1!4m6!3m5!1s0x39e43b07610cd359:0x3d02105e35357aa4!8m2!3d26.9194369!4d88.3769922!16s%2Fg%2F11zg27dqnk?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank" class="btn btn-map" aria-label="Google Maps"><i class="fas fa-map-marker-alt"></i></a>
         </div>
     </header>
-
     <div class="container">
-
-        <!-- 1. Description Section -->
         <section>
             <h2>Welcome to Your Mountain Home</h2>
             <div class="about-box">
-                <p>
-                    Tucked away in the quiet, picturesque landscape of Ghalaytor Bazar, Sittong, our homestay is designed to be exactly what its name promises—a <em>gharoa</em> (home-like) escape where travel never ends. Wake up to golden sunrises over the majestic peaks of Mt. Kanchenjunga, sip hot tea while looking out at the lush terraced valleys, and experience true local mountain hospitality.
+                <p>Nestled amidst the peaceful hills and lush orange orchards of Ghalaytor Bazar, Sittong,
+                    <strong>Sewanney Gharoa Homestay</strong> offers a sanctuary where mountain calm meets genuine
+                    Himalayan warmth. True to its name, <em>"Gharoa"</em> (home-like), guests regularly celebrate the
+                    feeling of arriving not just as travelers, but being welcomed warmly as family.
                 </p>
+                <p style="margin-top: 16px;">Greet your mornings with golden sunrises over the majestic snow-crowned
+                    peak of <strong>Mt. Kanchenjunga</strong>, crisp alpine air, and soothing birdsong echoing across
+                    the terraced valleys. Savor delicious, wholesome regional meals prepared with organic local produce
+                    and served fresh with heartwarming care. Whether you are wandering through serene village nature
+                    trails, relaxing in spotless and cozy rooms, or watching the floating mountain mist over hot cups of
+                    Darjeeling tea, our home promises an unforgettable escape into tranquility.</p>
+                <div style="margin-top: 25px; text-align: center;">
+                    <a href="https://g.page/r/CaR6NTVeEAI9EAE/review" target="_blank"
+                        style="display: inline-flex; align-items: center; gap: 8px; background: #fffdf7; border: 1.5px solid var(--accent-gold); padding: 10px 22px; border-radius: 30px; color: var(--primary-dark); text-decoration: none; font-weight: 500; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); transition: var(--transition);">
+                        <span style="color: #f59e0b; font-size: 1.1rem; letter-spacing: 2px;">★★★★★</span>
+                        <span>Rated <strong>4.9/5</strong> on Google &bull; <strong>Read &amp; Share Your
+                                Review</strong></span>
+                        <i class="fas fa-external-link-alt"
+                            style="font-size: 0.8rem; color: var(--accent-gold); margin-left: 4px;"></i>
+                    </a>
+                </div>
             </div>
         </section>
-
-        <!-- 2. Amenities Section -->
         <section>
             <h2>What We Offer</h2>
             <div class="amenities-grid">
@@ -322,94 +624,338 @@
                     <h3>🍲 Delicious & Authentic Regional Cuisine</h3>
                 </div>
             </div>
+            <p class="show-more" id="amenitiesToggle">+ Show More Amenities</p>
+            <div class="amenities-more" id="amenitiesMore">
+                <div class="amenities-grid">
+                    <div class="amenity-card">
+                        <h3>🔥 Cozy Fireplace Evenings</h3>
+                    </div>
+                    <div class="amenity-card">
+                        <h3>🧘 Yoga & Meditation Space</h3>
+                    </div>
+                    <div class="amenity-card">
+                        <h3>🚲 Bicycle Rentals</h3>
+                    </div>
+                    <div class="amenity-card">
+                        <h3>🌿 Nature Walks</h3>
+                    </div>
+                    <div class="amenity-card">
+                        <h3>📚 Mini Library</h3>
+                    </div>
+                    <div class="amenity-card">
+                        <h3>🛁 Private Bathrooms</h3>
+                    </div>
+                    <div class="amenity-card">
+                        <h3>🧺 Laundry Services</h3>
+                    </div>
+                    <div class="amenity-card">
+                        <h3>🛎️ 24‑Hour Reception</h3>
+                    </div>
+                    <div class="amenity-card">
+                        <h3>🎨 Cultural Workshops</h3>
+                    </div>
+                    <div class="amenity-card">
+                        <h3>🚿 Hot Showers</h3>
+                    </div>
+                </div>
+                <p class="show-more" id="amenitiesToggleLess">- Show Less</p>
+            </div>
         </section>
-
-        <!-- 3. Featured Carousel Section (Shows first 10 images) -->
         <section>
-            <h2>Featured Highlights</h2>
-            <div class="carousel-container">
-                <!-- Slide 1 -->
-                <div class="carousel-slide active">
-                    <img src="assets/images/gallery-1.jpg" alt="Highlight 1" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=900&q=80'">
+            <h2>Places to Visit Near Stay</h2>
+            <div class="places-grid">
+                <div class="place-card">
+                    <div class="place-card-top">
+                        <span class="place-tag">Scenic Vista</span>
+                        <div class="place-icon-badge">🌄</div>
+                    </div>
+                    <h3>Ahaldara Viewpoint</h3>
+                    <p>Located a short distance away, this popular vantage point provides an incredible 360-degree
+                        panoramic view of the surrounding hills, tea gardens, and the majestic Kanchenjunga range.</p>
                 </div>
-                <!-- Slide 2 -->
-                <div class="carousel-slide">
-                    <img src="assets/images/gallery-2.jpg" alt="Highlight 2" onerror="this.src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80'">
+                <div class="place-card">
+                    <div class="place-card-top">
+                        <span class="place-tag">Eco &amp; Wildlife</span>
+                        <div class="place-icon-badge">🏞️</div>
+                    </div>
+                    <h3>Namthing Pokhri (Lake)</h3>
+                    <p>A serene natural lake nestled in the Shelpu hills surrounded by pine forests, known locally as a
+                        peaceful habitat for the rare Himalayan Salamander.</p>
                 </div>
-                <!-- Slide 3 -->
-                <div class="carousel-slide">
-                    <img src="assets/images/gallery-3.jpg" alt="Highlight 3" onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80'">
+                <div class="place-card">
+                    <div class="place-card-top">
+                        <span class="place-tag">River &amp; Heritage</span>
+                        <div class="place-icon-badge">🌉</div>
+                    </div>
+                    <h3>Jogighat Bridge &amp; Riyang River</h3>
+                    <p>A picturesque steel suspension bridge built over the flowing Riyang Khola mountain stream,
+                        decorated with colorful fluttering prayer flags.</p>
                 </div>
-                <!-- Slide 4 -->
-                <div class="carousel-slide">
-                    <img src="assets/images/gallery-4.jpg" alt="Highlight 4" onerror="this.src='https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=900&q=80'">
+                <div class="place-card">
+                    <div class="place-card-top">
+                        <span class="place-tag">Village Orchards</span>
+                        <div class="place-icon-badge">🍊</div>
+                    </div>
+                    <h3>Local Orange Orchards</h3>
+                    <p>Walk through the vibrant orange orchards of Ghalaytor Bazar and Shelpu, which paint the village
+                        in bright hues and sweet aromas during the winter harvest season.</p>
                 </div>
-                <!-- Slide 5 -->
-                <div class="carousel-slide">
-                    <img src="assets/images/gallery-5.jpg" alt="Highlight 5" onerror="this.src='https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=900&q=80'">
+                <div class="place-card">
+                    <div class="place-card-top">
+                        <span class="place-tag">Culture &amp; Peace</span>
+                        <div class="place-icon-badge">🏯</div>
+                    </div>
+                    <h3>Sittong Monastery (Upper Ghalaytar)</h3>
+                    <p>An ancient, culturally rich Buddhist monastery offering a peaceful spiritual ambiance alongside
+                        stunning valley views.</p>
                 </div>
-
-                <!-- Carousel Controls -->
+                <div class="place-card">
+                    <div class="place-card-top">
+                        <span class="place-tag">Nature &amp; Adventure</span>
+                        <div class="place-icon-badge">💧</div>
+                    </div>
+                    <h3>Jogikhola Waterfall &amp; Rock Climbing</h3>
+                    <p>A scenic roadside waterfall and natural rock bed formation located along the local hills, perfect
+                        for day excursions and adventure photography.</p>
+                </div>
+            </div>
+            <a href="https://www.google.com/search?q=tourist+spot+near+sittong+ghayal+tor+bazar" target="_blank"
+                class="view-gallery">Explore More Nearby Attractions &rarr;</a>
+        </section>
+        <section>
+            <h2>Images from the Stay</h2>
+            <div class="carousel-container" id="heroCarousel">
+                <div class="carousel-slide active"><img src="assets/images/gallery-1.jpeg" alt="Stay Image 1"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-2.jpeg" alt="Stay Image 2"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-3.jpeg" alt="Stay Image 3"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-4.jpeg" alt="Stay Image 4"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-5.jpeg" alt="Stay Image 5"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-6.jpeg" alt="Stay Image 6"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-7.jpeg" alt="Stay Image 7"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-8.jpeg" alt="Stay Image 8"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-9.jpeg" alt="Stay Image 9"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-10.jpeg" alt="Stay Image 10"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-11.jpeg" alt="Stay Image 11"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-12.jpeg" alt="Stay Image 12"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-13.jpeg" alt="Stay Image 13"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-14.jpeg" alt="Stay Image 14"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-15.jpeg" alt="Stay Image 15"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-16.jpeg" alt="Stay Image 16"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-17.jpeg" alt="Stay Image 17"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-18.jpeg" alt="Stay Image 18"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-19.jpeg" alt="Stay Image 19"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-20.jpeg" alt="Stay Image 20"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-21.jpeg" alt="Stay Image 21"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-22.jpeg" alt="Stay Image 22"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-23.jpeg" alt="Stay Image 23"></div>
+                <!-- <div class="carousel-slide"><img src="assets/images/gallery-10.jpeg" alt="Stay Image 24"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-10.jpeg" alt="Stay Image 25"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-10.jpeg" alt="Stay Image 26"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-10.jpeg" alt="Stay Image 27"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-10.jpeg" alt="Stay Image 28"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-10.jpeg" alt="Stay Image 29"></div>
+                <div class="carousel-slide"><img src="assets/images/gallery-10.jpeg" alt="Stay Image 30"></div> -->
                 <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
                 <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
             </div>
+            <span class="view-gallery" id="openGalleryModal">View Full Gallery</span>
         </section>
-
-        <!-- 4. Video Tour Section -->
         <section>
-            <h2>Property Video Tour</h2>
-            <div class="video-container">
-                <video controls muted>
-                    <source src="assets/videos/promo-1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <h2>Video Gallery</h2>
+            <div class="video-gallery-grid" id="videoGallery">
+                <div class="video-thumb" data-video="assets/videos/video-1.mp4">
+                    <video preload="metadata" src="assets/videos/video-1.mp4#t=0.5"></video>
+                    <i class="fas fa-play-circle play-icon"></i>
+                </div>
+                <div class="video-thumb" data-video="assets/videos/video-2.mp4">
+                    <video preload="metadata" src="assets/videos/video-2.mp4#t=0.5"></video>
+                    <i class="fas fa-play-circle play-icon"></i>
+                </div>
+                <div class="video-thumb" data-video="assets/videos/video-3.mp4">
+                    <video preload="metadata" src="assets/videos/video-3.mp4#t=0.5"></video>
+                    <i class="fas fa-play-circle play-icon"></i>
+                </div>
             </div>
+            <span class="view-gallery" id="openVideoGalleryModal">View Full Video Gallery</span>
         </section>
-
-        <!-- 5. Full Gallery Section ("See All" - Ready for up to 50 images) -->
-        <section id="gallery">
-            <h2>Complete Gallery</h2>
-            <p style="text-align: center; color: #64748b; margin-bottom: 25px;">Explore a complete collection of our rooms, views, and surroundings.</p>
-            
-            <div class="gallery-grid">
-                <!-- Dynamically populated or manually mapped grid for gallery items -->
-                <div class="gallery-item"><img src="assets/images/gallery-1.jpg" alt="Gallery 1" onerror="this.style.display='none'"></div>
-                <div class="gallery-item"><img src="assets/images/gallery-2.jpg" alt="Gallery 2" onerror="this.style.display='none'"></div>
-                <div class="gallery-item"><img src="assets/images/gallery-3.jpg" alt="Gallery 3" onerror="this.style.display='none'"></div>
-                <div class="gallery-item"><img src="assets/images/gallery-4.jpg" alt="Gallery 4" onerror="this.style.display='none'"></div>
-                <div class="gallery-item"><img src="assets/images/gallery-5.jpg" alt="Gallery 5" onerror="this.style.display='none'"></div>
-                <div class="gallery-item"><img src="assets/images/gallery-6.jpg" alt="Gallery 6" onerror="this.style.display='none'"></div>
-                <div class="gallery-item"><img src="assets/images/gallery-7.jpg" alt="Gallery 7" onerror="this.style.display='none'"></div>
-                <div class="gallery-item"><img src="assets/images/gallery-8.jpg" alt="Gallery 8" onerror="this.style.display='none'"></div>
-                <div class="gallery-item"><img src="assets/images/gallery-9.jpg" alt="Gallery 9" onerror="this.style.display='none'"></div>
-                <div class="gallery-item"><img src="assets/images/gallery-10.jpg" alt="Gallery 10" onerror="this.style.display='none'"></div>
-                <!-- You can easily copy and paste items up to gallery-50.jpg -->
-            </div>
-        </section>
-
     </div>
-
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Sewanney Gharoa Homestay. All rights reserved.</p>
-        <p>Email: sewanney.gharoa.homestay@gmail.com | Phone: +91 7044239256</p>
+        <p><i class="fas fa-map-marker-alt"></i> <a
+                href="https://www.google.com/maps/place/Sewanney+Gharoa+Homestay/@26.9194369,88.3744173,17z/data=!3m1!4b1!4m6!3m5!1s0x39e43b07610cd359:0x3d02105e35357aa4!8m2!3d26.9194369!4d88.3769922!16s%2Fg%2F11zg27dqnk?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank">Ghalaytor Bazar, Sittong Khasmahal, West Bengal 734008</a></p>
+        <p>Email: <a href="mailto:sewanney.gharoa.homestay@gmail.com">sewanney.gharoa.homestay@gmail.com</a> | Phone:
+            <a href="tel:+917044239256">+91 7044239256</a>
+        </p>
     </footer>
-
-    <!-- Carousel JavaScript Control -->
+    <div class="modal" id="galleryModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Image Gallery</h3>
+                <button class="modal-close" onclick="closeModal('galleryModal')">&times;</button>
+            </div>
+            <div class="gallery-grid" id="fullGalleryGrid"></div>
+        </div>
+    </div>
+    <div class="modal" id="imageLightboxModal">
+        <div class="modal-content lightbox-content">
+            <div class="modal-header lightbox-header">
+                <span id="lightboxCounter"
+                    style="color: #fff; font-size: 0.95rem; margin-right: auto; padding-left: 4px; font-weight: 500;"></span>
+                <button class="modal-close" onclick="closeModal('imageLightboxModal')">&times;</button>
+            </div>
+            <div class="lightbox-media-wrapper">
+                <button class="lightbox-nav-btn prev-lightbox" onclick="changeLightboxImage(-1)"
+                    aria-label="Previous image">&#10094;</button>
+                <img src="" alt="" id="lightboxImg" />
+                <button class="lightbox-nav-btn next-lightbox" onclick="changeLightboxImage(1)"
+                    aria-label="Next image">&#10095;</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="videoGalleryModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Video Gallery</h3>
+                <button class="modal-close" onclick="closeModal('videoGalleryModal')">&times;</button>
+            </div>
+            <div class="video-gallery-grid" id="fullVideoGalleryGrid"></div>
+        </div>
+    </div>
+    <div class="modal" id="videoLightboxModal">
+        <div class="modal-content lightbox-content">
+            <div class="modal-header lightbox-header">
+                <span id="videoLightboxCounter"
+                    style="color: #fff; font-size: 0.95rem; margin-right: auto; padding-left: 4px; font-weight: 500;"></span>
+                <button class="modal-close" onclick="closeModal('videoLightboxModal')">&times;</button>
+            </div>
+            <div class="lightbox-media-wrapper">
+                <button class="lightbox-nav-btn prev-lightbox" onclick="changeLightboxVideo(-1)"
+                    aria-label="Previous video">&#10094;</button>
+                <video controls id="lightboxVideo"></video>
+                <button class="lightbox-nav-btn next-lightbox" onclick="changeLightboxVideo(1)"
+                    aria-label="Next video">&#10095;</button>
+            </div>
+        </div>
+    </div>
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
+        let currentSlide = 0; const slides = document.querySelectorAll('.carousel-slide');
+        function moveSlide(dir) { slides[currentSlide].classList.remove('active'); currentSlide = (currentSlide + dir + slides.length) % slides.length; slides[currentSlide].classList.add('active'); }
+        setInterval(() => moveSlide(1), 8000);
+        const toggle = document.getElementById('amenitiesToggle'); const toggleLess = document.getElementById('amenitiesToggleLess'); const moreDiv = document.getElementById('amenitiesMore');
+        toggle.addEventListener('click', () => { moreDiv.style.display = 'block'; toggle.style.display = 'none'; });
+        toggleLess.addEventListener('click', () => { moreDiv.style.display = 'none'; toggle.style.display = 'block'; });
+        const totalGalleryImages = 23;
+        let currentImageIndex = 1;
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCounter = document.getElementById('lightboxCounter');
 
-        function moveSlide(direction) {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + direction + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
+        function showLightboxImage(idx) {
+            if (idx < 1) idx = totalGalleryImages;
+            if (idx > totalGalleryImages) idx = 1;
+            currentImageIndex = idx;
+            lightboxImg.src = `assets/images/gallery-${currentImageIndex}.jpeg`;
+            lightboxImg.alt = `Gallery ${currentImageIndex}`;
+            if (lightboxCounter) {
+                lightboxCounter.textContent = `${currentImageIndex} / ${totalGalleryImages}`;
+            }
         }
 
-        // Auto slide every 5 seconds
-        setInterval(() => {
-            moveSlide(1);
-        }, 5000);
+        function openLightbox(idx) {
+            showLightboxImage(idx);
+            document.getElementById('imageLightboxModal').style.display = 'flex';
+        }
+
+        function changeLightboxImage(dir) {
+            showLightboxImage(currentImageIndex + dir);
+        }
+
+        const galleryModal = document.getElementById('galleryModal');
+        const fullGalleryGrid = document.getElementById('fullGalleryGrid');
+        const openGalleryBtn = document.getElementById('openGalleryModal');
+        openGalleryBtn.addEventListener('click', () => {
+            fullGalleryGrid.innerHTML = '';
+            for (let i = 1; i <= totalGalleryImages; i++) {
+                const img = document.createElement('img');
+                img.src = `assets/images/gallery-${i}.jpeg`;
+                img.alt = `Gallery ${i}`;
+                img.style.cursor = 'pointer';
+                const index = i;
+                img.addEventListener('click', () => openLightbox(index));
+                fullGalleryGrid.appendChild(img);
+            }
+            galleryModal.style.display = 'flex';
+        });
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.style.display = 'none';
+            const vid = modal.querySelector('video');
+            if (vid) { vid.pause(); }
+        }
+
+        const totalVideos = 5;
+        let currentVideoIndex = 1;
+        const lightboxVideo = document.getElementById('lightboxVideo');
+        const videoLightboxCounter = document.getElementById('videoLightboxCounter');
+
+        function showLightboxVideo(idx) {
+            if (idx < 1) idx = totalVideos;
+            if (idx > totalVideos) idx = 1;
+            currentVideoIndex = idx;
+            lightboxVideo.src = `assets/videos/video-${currentVideoIndex}.mp4`;
+            if (videoLightboxCounter) {
+                videoLightboxCounter.textContent = `${currentVideoIndex} / ${totalVideos}`;
+            }
+            lightboxVideo.play();
+        }
+
+        function openVideoLightbox(idx) {
+            showLightboxVideo(idx);
+            document.getElementById('videoLightboxModal').style.display = 'flex';
+        }
+
+        function changeLightboxVideo(dir) {
+            showLightboxVideo(currentVideoIndex + dir);
+        }
+
+        const videoGalleryModal = document.getElementById('videoGalleryModal');
+        const fullVideoGalleryGrid = document.getElementById('fullVideoGalleryGrid');
+        const openVideoGalleryBtn = document.getElementById('openVideoGalleryModal');
+        openVideoGalleryBtn.addEventListener('click', () => {
+            fullVideoGalleryGrid.innerHTML = '';
+            for (let i = 1; i <= totalVideos; i++) {
+                const thumb = document.createElement('div');
+                thumb.className = 'video-thumb';
+                thumb.dataset.video = `assets/videos/video-${i}.mp4`;
+                const vid = document.createElement('video');
+                vid.preload = 'metadata';
+                vid.src = `assets/videos/video-${i}.mp4#t=0.5`;
+                const play = document.createElement('i');
+                play.className = 'fas fa-play-circle play-icon';
+                thumb.appendChild(vid);
+                thumb.appendChild(play);
+                const index = i;
+                thumb.addEventListener('click', () => openVideoLightbox(index));
+                fullVideoGalleryGrid.appendChild(thumb);
+            }
+            videoGalleryModal.style.display = 'flex';
+        });
+
+        document.querySelectorAll('#videoGallery .video-thumb').forEach((thumb, idx) => {
+            thumb.addEventListener('click', () => openVideoLightbox(idx + 1));
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('imageLightboxModal').style.display === 'flex') {
+                if (e.key === 'ArrowLeft') changeLightboxImage(-1);
+                if (e.key === 'ArrowRight') changeLightboxImage(1);
+                if (e.key === 'Escape') closeModal('imageLightboxModal');
+            } else if (document.getElementById('videoLightboxModal').style.display === 'flex') {
+                if (e.key === 'ArrowLeft') changeLightboxVideo(-1);
+                if (e.key === 'ArrowRight') changeLightboxVideo(1);
+                if (e.key === 'Escape') closeModal('videoLightboxModal');
+            }
+        });
     </script>
 </body>
-</html>
