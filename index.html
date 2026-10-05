@@ -947,15 +947,31 @@
         });
 
         document.addEventListener('keydown', (e) => {
-            if (document.getElementById('imageLightboxModal').style.display === 'flex') {
+            if (e.key === 'Escape' || e.key === 'Esc') {
+                if (document.getElementById('imageLightboxModal').style.display === 'flex') {
+                    closeModal('imageLightboxModal');
+                } else if (document.getElementById('videoLightboxModal').style.display === 'flex') {
+                    closeModal('videoLightboxModal');
+                } else if (document.getElementById('galleryModal').style.display === 'flex') {
+                    closeModal('galleryModal');
+                } else if (document.getElementById('videoGalleryModal').style.display === 'flex') {
+                    closeModal('videoGalleryModal');
+                }
+            } else if (document.getElementById('imageLightboxModal').style.display === 'flex') {
                 if (e.key === 'ArrowLeft') changeLightboxImage(-1);
                 if (e.key === 'ArrowRight') changeLightboxImage(1);
-                if (e.key === 'Escape') closeModal('imageLightboxModal');
             } else if (document.getElementById('videoLightboxModal').style.display === 'flex') {
                 if (e.key === 'ArrowLeft') changeLightboxVideo(-1);
                 if (e.key === 'ArrowRight') changeLightboxVideo(1);
-                if (e.key === 'Escape') closeModal('videoLightboxModal');
             }
+        });
+
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal(modal.id);
+                }
+            });
         });
     </script>
 </body>
