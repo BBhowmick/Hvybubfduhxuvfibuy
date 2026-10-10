@@ -36,7 +36,7 @@
         }
 
         header {
-            background: linear-gradient(rgba(15, 31, 56, 0.6), rgba(15, 31, 56, 0.6)), url('assets/images/hero-image.jpg') no-repeat center/cover;
+            background: linear-gradient(rgba(15, 31, 56, 0.6), rgba(15, 31, 56, 0.6)), url('assets/images/hero-image.jpeg') no-repeat center/cover;
             color: var(--text-light);
             text-align: center;
             padding: 150px 20px;
@@ -488,6 +488,11 @@
             gap: 15px;
         }
 
+        /* Show only the first 3 videos on the main page; full gallery modal shows all */
+        #videoGallery .video-thumb:nth-child(n+4) {
+            display: none;
+        }
+
         .video-thumb {
             position: relative;
             cursor: pointer;
@@ -585,17 +590,20 @@
         <section>
             <h2>Welcome to Your Mountain Home</h2>
             <div class="about-box">
-                <p>Nestled amidst the peaceful hills and lush orange orchards of Ghalaytor Bazar, Sittong,
-                    <strong>Sewanney Gharoa Homestay</strong> offers a sanctuary where mountain calm meets genuine
-                    Himalayan warmth. True to its name, <em>"Gharoa"</em> (home-like), guests regularly celebrate the
-                    feeling of arriving not just as travelers, but being welcomed warmly as family.
+                <p>Welcome to <strong>Sewanney Gharoa Homestay</strong>! Nestled amidst the peaceful hills and lush
+                    orange orchards of <strong>Upper Sittong</strong>. Our home offers a true sanctuary where mountain
+                    calm meets genuine Himalayan warmth. True to its name, you will experience a <em><strong>Gharoa
+                            (home-like) feeling</strong></em> that helps you escape the rush of everyday life, where
+                    guests are welcomed not merely as travelers, but embraced warmly as family.
                 </p>
-                <p style="margin-top: 16px;">Greet your mornings with golden sunrises over the majestic snow-crowned
-                    peak of <strong>Mt. Kanchenjunga</strong>, crisp alpine air, and soothing birdsong echoing across
-                    the terraced valleys. Savor delicious, wholesome regional meals prepared with organic local produce
-                    and served fresh with heartwarming care. Whether you are wandering through serene village nature
-                    trails, relaxing in spotless and cozy rooms, or watching the floating mountain mist over hot cups of
-                    Darjeeling tea, our home promises an unforgettable escape into tranquility.</p>
+                <p style="margin-top: 16px;">Greet your mornings with golden sunrises over the snow-crowned peaks of
+                    <strong>Mt. Kanchenjunga</strong> (Himalayan mountain), crisp alpine air, and soothing birdsong
+                    echoing across the terraced green valleys. Savor delicious, wholesome regional meals prepared with
+                    organic locally produced and served fresh with heartfelt care. Whether you are relaxing in spotless,
+                    cozy rooms, exploring the tranquil surroundings, or watching the evening sky paint the hills in
+                    magical golden and twilight hues over hot cups of Darjeeling tea, our home promises an unforgettable
+                    escape into tranquility.
+                </p>
                 <div style="margin-top: 25px; text-align: center;">
                     <a href="https://g.page/r/CaR6NTVeEAI9EAE/review" target="_blank"
                         style="display: inline-flex; align-items: center; gap: 8px; background: #fffdf7; border: 1.5px solid var(--accent-gold); padding: 10px 22px; border-radius: 30px; color: var(--primary-dark); text-decoration: none; font-weight: 500; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); transition: var(--transition);">
@@ -612,7 +620,7 @@
             <h2>What We Offer</h2>
             <div class="amenities-grid">
                 <div class="amenity-card">
-                    <h3>🏔️ Majestic Distant Kanchenjunga Views</h3>
+                    <h3>🏔️ Majestic Distant Mt. Kanchenjunga Views</h3>
                 </div>
                 <div class="amenity-card">
                     <h3>🌾 Peaceful Terraced Valley Landscapes</h3>
@@ -621,42 +629,44 @@
                     <h3>🛏️ Charming & Authentic Homestay Rooms</h3>
                 </div>
                 <div class="amenity-card">
-                    <h3>🍲 Delicious & Authentic Regional Cuisine</h3>
+                    <h3>🌿 Nature Walks in & around orange orchards</h3>
                 </div>
+
             </div>
             <p class="show-more" id="amenitiesToggle">+ Show More Amenities</p>
             <div class="amenities-more" id="amenitiesMore">
                 <div class="amenities-grid">
                     <div class="amenity-card">
-                        <h3>🔥 Cozy Fireplace Evenings</h3>
+                        <h3>🍲 Delicious & Authentic Regional Cuisine</h3>
                     </div>
                     <div class="amenity-card">
-                        <h3>🧘 Yoga & Meditation Space</h3>
+                        <h3>✨ Cozy Star-Watching Evening</h3>
                     </div>
+                    <!-- <div class="amenity-card">
+                        <h3>🧘 Yoga & Meditation Space</h3>
+                    </div> -->
                     <div class="amenity-card">
                         <h3>🚲 Bicycle Rentals</h3>
                     </div>
-                    <div class="amenity-card">
-                        <h3>🌿 Nature Walks</h3>
-                    </div>
-                    <div class="amenity-card">
+
+                    <!-- <div class="amenity-card">
                         <h3>📚 Mini Library</h3>
-                    </div>
-                    <div class="amenity-card">
+                    </div> -->
+                    <!-- <div class="amenity-card">
                         <h3>🛁 Private Bathrooms</h3>
-                    </div>
-                    <div class="amenity-card">
+                    </div> -->
+                    <!-- <div class="amenity-card">
                         <h3>🧺 Laundry Services</h3>
-                    </div>
+                    </div> -->
                     <div class="amenity-card">
                         <h3>🛎️ 24‑Hour Reception</h3>
                     </div>
-                    <div class="amenity-card">
+                    <!-- <div class="amenity-card">
                         <h3>🎨 Cultural Workshops</h3>
-                    </div>
-                    <div class="amenity-card">
+                    </div> -->
+                    <!-- <div class="amenity-card">
                         <h3>🚿 Hot Showers</h3>
-                    </div>
+                    </div> -->
                 </div>
                 <p class="show-more" id="amenitiesToggleLess">- Show Less</p>
             </div>
@@ -719,8 +729,8 @@
                         for day excursions and adventure photography.</p>
                 </div>
             </div>
-            <a href="https://www.google.com/search?q=tourist+spot+near+sittong+ghayal+tor+bazar" target="_blank"
-                class="view-gallery">Explore More Nearby Attractions &rarr;</a>
+            <a href="https://www.google.com/search?q=place+to+visit+in+sittong&sca_esv=afb89ae158309890&udm=local&biw=1536&bih=730&sxsrf=APpeQnu1G9_NeEZzTMb0UpxK24Qz6XdCEA%3A1791537666689&ei=ArLIaovaKbSrhvcP6cilgAE&oq=place+to+visit+in+sittong&gs_lp=EhZnd3Mtd2l6LW1vZGVsZXNzLWxvY2FsIhlwbGFjZSB0byB2aXNpdCBpbiBzaXR0b25nKgUIABiABDIFEAAYgAQyCxAAGIAEGIoFGIYDMgsQABiABBiKBRiGAzILEAAYgAQYigUYhgMyCBAAGIAEGKIESPp1UABY41pwAHgAkAEAmAGPAqABkBuqAQYwLjEzLja4AQHIAQD4AQGYAgugApMPwgIHEAAYgAQYDcICBhAAGAcYHsICCBAAGAUYBxgewgIFEAAY7wXCAggQABgFGB4YDcICCBAAGAgYHhgNmAMAkgcFMC45LjKgB46JAbIHBTAuOS4yuAeTD8IHBTAuMi45yActgAgB&sclient=gws-wiz-modeless-local"
+                target="_blank" class="view-gallery">Explore More Nearby Attractions &rarr;</a>
         </section>
         <section>
             <h2>Images from the Stay</h2>
@@ -737,24 +747,6 @@
                 <div class="carousel-slide"><img src="assets/images/gallery-10.jpeg" alt="Stay Image 10"></div>
                 <div class="carousel-slide"><img src="assets/images/gallery-11.jpeg" alt="Stay Image 11"></div>
                 <div class="carousel-slide"><img src="assets/images/gallery-12.jpeg" alt="Stay Image 12"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-13.jpeg" alt="Stay Image 13"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-14.jpeg" alt="Stay Image 14"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-15.jpeg" alt="Stay Image 15"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-16.jpeg" alt="Stay Image 16"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-17.jpeg" alt="Stay Image 17"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-18.jpeg" alt="Stay Image 18"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-19.jpeg" alt="Stay Image 19"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-20.jpeg" alt="Stay Image 20"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-21.jpeg" alt="Stay Image 21"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-22.jpeg" alt="Stay Image 22"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-23.jpeg" alt="Stay Image 23"></div>
-                <!-- <div class="carousel-slide"><img src="assets/images/gallery-10.jpeg" alt="Stay Image 24"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-10.jpeg" alt="Stay Image 25"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-10.jpeg" alt="Stay Image 26"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-10.jpeg" alt="Stay Image 27"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-10.jpeg" alt="Stay Image 28"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-10.jpeg" alt="Stay Image 29"></div>
-                <div class="carousel-slide"><img src="assets/images/gallery-10.jpeg" alt="Stay Image 30"></div> -->
                 <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
                 <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
             </div>
@@ -773,6 +765,14 @@
                 </div>
                 <div class="video-thumb" data-video="assets/videos/video-3.mp4">
                     <video preload="metadata" src="assets/videos/video-3.mp4#t=0.5"></video>
+                    <i class="fas fa-play-circle play-icon"></i>
+                </div>
+                <div class="video-thumb" data-video="assets/videos/video-4.mp4">
+                    <video preload="metadata" src="assets/videos/video-4.mp4#t=0.5"></video>
+                    <i class="fas fa-play-circle play-icon"></i>
+                </div>
+                <div class="video-thumb" data-video="assets/videos/video-5.mp4">
+                    <video preload="metadata" src="assets/videos/video-5.mp4#t=0.5"></video>
                     <i class="fas fa-play-circle play-icon"></i>
                 </div>
             </div>
@@ -839,23 +839,51 @@
         </div>
     </div>
     <script>
-        let currentSlide = 0; const slides = document.querySelectorAll('.carousel-slide');
-        function moveSlide(dir) { slides[currentSlide].classList.remove('active'); currentSlide = (currentSlide + dir + slides.length) % slides.length; slides[currentSlide].classList.add('active'); }
+        let currentSlide = 0;
+        const getSlideElements = () => document.querySelectorAll('#heroCarousel .carousel-slide, .carousel-slide');
+        let slides = getSlideElements();
+
+        function moveSlide(dir) {
+            slides = getSlideElements();
+            if (slides.length === 0) return;
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + dir + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
         setInterval(() => moveSlide(1), 8000);
-        const toggle = document.getElementById('amenitiesToggle'); const toggleLess = document.getElementById('amenitiesToggleLess'); const moreDiv = document.getElementById('amenitiesMore');
-        toggle.addEventListener('click', () => { moreDiv.style.display = 'block'; toggle.style.display = 'none'; });
-        toggleLess.addEventListener('click', () => { moreDiv.style.display = 'none'; toggle.style.display = 'block'; });
-        const totalGalleryImages = 23;
+
+        const toggle = document.getElementById('amenitiesToggle');
+        const toggleLess = document.getElementById('amenitiesToggleLess');
+        const moreDiv = document.getElementById('amenitiesMore');
+        if (toggle && moreDiv) toggle.addEventListener('click', () => { moreDiv.style.display = 'block'; toggle.style.display = 'none'; });
+        if (toggleLess && moreDiv) toggleLess.addEventListener('click', () => { moreDiv.style.display = 'none'; toggle.style.display = 'block'; });
+
+        // --- Image Gallery & Lightbox (Dynamically counted from carousel slides) ---
+        function getImageData() {
+            const slideNodes = getSlideElements();
+            return Array.from(slideNodes).map((slide, idx) => {
+                const img = slide.querySelector('img');
+                return {
+                    src: img ? img.getAttribute('src') : `assets/images/gallery-${idx + 1}.jpeg`,
+                    alt: img ? (img.getAttribute('alt') || `Gallery Image ${idx + 1}`) : `Gallery Image ${idx + 1}`
+                };
+            });
+        }
+
         let currentImageIndex = 1;
         const lightboxImg = document.getElementById('lightboxImg');
         const lightboxCounter = document.getElementById('lightboxCounter');
 
         function showLightboxImage(idx) {
+            const images = getImageData();
+            const totalGalleryImages = images.length;
+            if (totalGalleryImages === 0) return;
             if (idx < 1) idx = totalGalleryImages;
             if (idx > totalGalleryImages) idx = 1;
             currentImageIndex = idx;
-            lightboxImg.src = `assets/images/gallery-${currentImageIndex}.jpeg`;
-            lightboxImg.alt = `Gallery ${currentImageIndex}`;
+            const item = images[currentImageIndex - 1];
+            lightboxImg.src = item.src;
+            lightboxImg.alt = item.alt;
             if (lightboxCounter) {
                 lightboxCounter.textContent = `${currentImageIndex} / ${totalGalleryImages}`;
             }
@@ -873,41 +901,79 @@
         const galleryModal = document.getElementById('galleryModal');
         const fullGalleryGrid = document.getElementById('fullGalleryGrid');
         const openGalleryBtn = document.getElementById('openGalleryModal');
-        openGalleryBtn.addEventListener('click', () => {
-            fullGalleryGrid.innerHTML = '';
-            for (let i = 1; i <= totalGalleryImages; i++) {
-                const img = document.createElement('img');
-                img.src = `assets/images/gallery-${i}.jpeg`;
-                img.alt = `Gallery ${i}`;
-                img.style.cursor = 'pointer';
-                const index = i;
-                img.addEventListener('click', () => openLightbox(index));
-                fullGalleryGrid.appendChild(img);
-            }
-            galleryModal.style.display = 'flex';
+        if (openGalleryBtn) {
+            openGalleryBtn.addEventListener('click', () => {
+                fullGalleryGrid.innerHTML = '';
+                const images = getImageData();
+                images.forEach((item, idx) => {
+                    const img = document.createElement('img');
+                    img.src = item.src;
+                    img.alt = item.alt;
+                    img.style.cursor = 'pointer';
+                    const index = idx + 1;
+                    img.addEventListener('click', () => openLightbox(index));
+                    fullGalleryGrid.appendChild(img);
+                });
+                galleryModal.style.display = 'flex';
+            });
+        }
+
+        // Allow clicking carousel slides directly to open lightbox
+        getSlideElements().forEach((slide, idx) => {
+            slide.style.cursor = 'pointer';
+            slide.addEventListener('click', (e) => {
+                if (e.target.closest('.carousel-btn')) return;
+                openLightbox(idx + 1);
+            });
         });
 
         function closeModal(id) {
             const modal = document.getElementById(id);
+            if (!modal) return;
             modal.style.display = 'none';
             const vid = modal.querySelector('video');
             if (vid) { vid.pause(); }
         }
 
-        const totalVideos = 5;
+        // --- Video Gallery & Lightbox (Dynamically counted from video items) ---
+        function getVideoElements() {
+            const items = document.querySelectorAll('#videoGallery .video-thumb, #videoGallery .carousel-slide');
+            if (items.length > 0) return Array.from(items);
+            return Array.from(document.querySelectorAll('#videoGallery > *'));
+        }
+
+        function getVideoData() {
+            const items = getVideoElements();
+            return items.map((el, idx) => {
+                const videoTag = el.querySelector('video');
+                const dataVideo = el.getAttribute('data-video');
+                const rawSrc = dataVideo || (videoTag ? videoTag.getAttribute('src') : `assets/videos/video-${idx + 1}.mp4`);
+                const cleanSrc = rawSrc.split('#')[0];
+                return {
+                    src: cleanSrc,
+                    thumbSrc: rawSrc.includes('#') ? rawSrc : `${cleanSrc}#t=0.5`,
+                    index: idx + 1
+                };
+            });
+        }
+
         let currentVideoIndex = 1;
         const lightboxVideo = document.getElementById('lightboxVideo');
         const videoLightboxCounter = document.getElementById('videoLightboxCounter');
 
         function showLightboxVideo(idx) {
+            const videos = getVideoData();
+            const totalVideos = videos.length;
+            if (totalVideos === 0) return;
             if (idx < 1) idx = totalVideos;
             if (idx > totalVideos) idx = 1;
             currentVideoIndex = idx;
-            lightboxVideo.src = `assets/videos/video-${currentVideoIndex}.mp4`;
+            const currentVideo = videos[currentVideoIndex - 1];
+            lightboxVideo.src = currentVideo.src;
             if (videoLightboxCounter) {
                 videoLightboxCounter.textContent = `${currentVideoIndex} / ${totalVideos}`;
             }
-            lightboxVideo.play();
+            lightboxVideo.play().catch(() => { });
         }
 
         function openVideoLightbox(idx) {
@@ -922,27 +988,30 @@
         const videoGalleryModal = document.getElementById('videoGalleryModal');
         const fullVideoGalleryGrid = document.getElementById('fullVideoGalleryGrid');
         const openVideoGalleryBtn = document.getElementById('openVideoGalleryModal');
-        openVideoGalleryBtn.addEventListener('click', () => {
-            fullVideoGalleryGrid.innerHTML = '';
-            for (let i = 1; i <= totalVideos; i++) {
-                const thumb = document.createElement('div');
-                thumb.className = 'video-thumb';
-                thumb.dataset.video = `assets/videos/video-${i}.mp4`;
-                const vid = document.createElement('video');
-                vid.preload = 'metadata';
-                vid.src = `assets/videos/video-${i}.mp4#t=0.5`;
-                const play = document.createElement('i');
-                play.className = 'fas fa-play-circle play-icon';
-                thumb.appendChild(vid);
-                thumb.appendChild(play);
-                const index = i;
-                thumb.addEventListener('click', () => openVideoLightbox(index));
-                fullVideoGalleryGrid.appendChild(thumb);
-            }
-            videoGalleryModal.style.display = 'flex';
-        });
+        if (openVideoGalleryBtn) {
+            openVideoGalleryBtn.addEventListener('click', () => {
+                fullVideoGalleryGrid.innerHTML = '';
+                const videos = getVideoData();
+                videos.forEach((v) => {
+                    const thumb = document.createElement('div');
+                    thumb.className = 'video-thumb';
+                    thumb.dataset.video = v.src;
+                    const vid = document.createElement('video');
+                    vid.preload = 'metadata';
+                    vid.src = v.thumbSrc;
+                    const play = document.createElement('i');
+                    play.className = 'fas fa-play-circle play-icon';
+                    thumb.appendChild(vid);
+                    thumb.appendChild(play);
+                    thumb.addEventListener('click', () => openVideoLightbox(v.index));
+                    fullVideoGalleryGrid.appendChild(thumb);
+                });
+                videoGalleryModal.style.display = 'flex';
+            });
+        }
 
-        document.querySelectorAll('#videoGallery .video-thumb').forEach((thumb, idx) => {
+        getVideoElements().forEach((thumb, idx) => {
+            thumb.style.cursor = 'pointer';
             thumb.addEventListener('click', () => openVideoLightbox(idx + 1));
         });
 
